@@ -207,3 +207,18 @@ fi
 # Lab 1: Create a Linux virtual machine with the Azure CLI
 1. Launch Azure Cloud Shell
 ![Azure Cloud Shell](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/azure-power-shell.PNG?raw=true)
+2. Create a resource group
+![resource group](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/azure_resouce_group.PNG?raw=true)
+3. Create virtual machine
+![virtual machine](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/vm.PNG?raw=true)
+4. Open port 80 for web traffic
+![port 80](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/port80.PNG?raw=true)
+5. Connect to virtual machine
+![onnect to virtual machine](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/connect_to_vm.PNG?raw=true)
+6. Install web server
+![web server](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/install_web_server.PNG?raw=true)
+7. View the web server in action
+![View web](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/view_web_version.PNG?raw=true)
+
+
+
