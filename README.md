@@ -206,3 +206,4 @@ fi
 
 # Lab 1: Create a Linux virtual machine with the Azure CLI
 1. Launch Azure Cloud Shell
+![Azure Cloud Shell](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/azure-power-shell.PNG?raw=true)
