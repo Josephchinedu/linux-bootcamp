@@ -278,6 +278,84 @@ To retrieve the state of a particular VM, use the ```az vm get-instance-view``` 
 ![Delete resource group](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2-delete-resource-group.PNG?raw=true)
 
 
+# Lab 3: Manage Azure disks with the Azure CLI
+Azure virtual machines (VMs) use disks to store the operating system, applications, and data. When you create a VM, it is important to choose a disk size and configuration appropriate to the expected workload
+
+##### Default Azure disks
+When an Azure virtual machine is created, two disks are automatically attached to the virtual machine.
+```Operating system disk```
+```Temporary disk```
+
+##### Azure data disks
+To install applications and store data, additional data disks can be added. Data disks should be used in any situation where durable and responsive data storage is desired. The size of the virtual machine determines how many data disks can be attached to a VM.
+
+##### VM disk types
+Azure provides two types of disks.
+```Standard disks```
+```Premium disks```
+
+### Attach disk at VM creation
+Create a resource group with the az group create command.
+![resource group](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab3_group.PNG?raw=true)
+
+In the following example, a VM is created with two data disks, both 128 GB. Because the disk sizes are 128 GB, these disks are both configured as P10s, which provide maximum 500 IOPS per disk.
+![data disks](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab3_vm_data_disks.PNG?raw=true)
+
+### Attach disk to existing VM
+The following example creates a premium disk, 128 gigabytes in size, and attaches it to the VM created in the last step.
+![Attach disk](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/vm-disk-attach.PNG?raw=true)
+
+### Prepare data disks
+Once a disk has been attached to the virtual machine, the operating system needs to be configured to use the disk.
+
+Create an SSH connection with the virtual machine.
+![SSH connection](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab3-ssh-connect.PNG?raw=true) 
+
+Partition the disk with parted.
+![Partition](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab3-partion.PNG?raw=true) 
+Write a file system to the partition by using the ```mkfs``` command. Use ```partprobe``` to make the OS aware of the change.
+![os partion](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/os-partion.PNG?raw=true)
+Mount the new disk so that it is accessible in the operating system.
+![os partion](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/mount-disk.PNG?raw=true)
+The disk can now be accessed through the ```/datadrive``` mountpoint, which can be verified by running the ```df -h``` command.
+![mount point](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/mount-point.PNG?raw=true)
+To ensure that the drive is remounted after a reboot, it must be added to the /etc/fstab file. To do so, get the UUID of the disk with the ```blkid``` utility.
+![blkid](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/blkid.PNG?raw=true)
+Open the ```/etc/fstab``` file in a text editor as follows:
+![nanoedit](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/nanoedit.PNG?raw=true)
+
+### Create snapshot
+![snap shot](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/snapshot.PNG?raw=true)
+![snap shot](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/create-snap.PNG?raw=true)
+
+### Create disk from snapshot
+![snap shot](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/disk-snapshot.PNG?raw=true)
+
+### Restore virtual machine from snapshot
+To demonstrate virtual machine recovery, delete the existing virtual machine using az vm delete.
+![snap shot](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/delete-snap-shot.PNG?raw=true)
+Create a new virtual machine from the snapshot disk.
+![snap shot](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab3-new-virtual-m.PNG?raw=true)
+
+### Reattach data disk
+All data disks need to be reattached to the virtual machine.
+
+Find the data disk name using the az disk list command. 
+![data list](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab3_datalist.PNG?raw=true)
+Use the az vm disk attach command to attach the disk.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
