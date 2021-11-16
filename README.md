@@ -220,5 +220,72 @@ fi
 7. View the web server in action
 ![View web](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/view_web_version.PNG?raw=true)
 
+# Lab 2: Manage Linux VMs with the Azure CLI
+1. Create resource group
+![resource group](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2_resource_group.PNG?raw=true)
+
+2. Create virtual machine
+![virtual machine](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2-vm.PNG?raw=true)
+
+3. Connect to VM
+![Connect to VM](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/connect_to_vm.PNG?raw=true)
+
+4. Understand VM images
+![Understand VM images](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/vm-image-tables.PNG?raw=true)
+![Understand VM images](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/all_centos_table.PNG?raw=true)
+![Understand VM images](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2_vm_centos.PNG?raw=true)
+
+5. Understand VM sizes
+A virtual machine size determines the amount of compute resources such as CPU, GPU, and memory that are made available to the virtual machine. Virtual machines need to be sized appropriately for the expected work load. If workload increases, an existing virtual machine can be resized.
+##### Find available VM sizes
+![VM sizes](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/vm-sizes.PNG?raw=true)
+
+##### Create VM with specific size
+![specific size](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2-specific-size.PNG?raw=true)
+
+##### view the current of size of a VM
+![view](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2-size-vm.PNG?raw=true)
+
+##### az vm list-vm-resize-options
+![vm-resize-options](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/vm-resize-options.PNG?raw=true)
+
+##### az vm resize
+![vm resize](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/vm-resize.PNG?raw=true)
+
+##### VM start
+![vm start](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/start-vm.PNG?raw=true)
+
+
+
+# VM power states
+##### Find the power state
+To retrieve the state of a particular VM, use the ```az vm get-instance-view``` command. Be sure to specify a valid name for a virtual machine and resource group.
+![power state](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2-power-state.PNG?raw=true)
+
+
+
+# Management tasks
+##### Get IP address
+![IP address](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/vm-ap-address.PNG?raw=true)
+
+##### Stop virtual machine
+![stop vm](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab-stop-vm.PNG?raw=true)
+
+##### Start virtual machine
+![start vm](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2-start.PNG?raw=true)
+
+##### Delete resource group
+![Delete resource group](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab2-delete-resource-group.PNG?raw=true)
+
+
+
+
+
+
+
+
+
+
+
 
 
