@@ -345,6 +345,27 @@ Find the data disk name using the az disk list command.
 Use the az vm disk attach command to attach the disk.
 
 
+# Lab 4: Create and use an SSH public-private key pair for Linux VMs in Azure
+With a secure shell (SSH) key pair, you can create virtual machines (VMs) in Azure that use SSH keys for authentication.
+
+##### Supported SSH key formats
+Azure supports SSH protocol 2 (SSH-2) RSA public-private key pairs with a minimum length of 2048 bits. Other key formats such as ED25519 and ECDSA are not supported.
+
+### Create an SSH key pair
+Use the ```ssh-keygen``` command to generate SSH public and private key files.
+The following command creates an SSH key pair using RSA encryption and a bit length of 4096:
+![ssh key](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/create-ssh-key.PNG?raw=true)
+![vm](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab4-create-vm.PNG?raw=true)
+
+display your public key with the following ```cat``` command
+![cat-ssh](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/cat-ssh.PNG?raw=true)
+to create your VM with an existing public key, specify the value and optionally the location of this public key using the az vm create command with the ```--ssh-key-values``` option.
+![ssh](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/create-re-shh.PNG?raw=true)
+
+### SSH into your VM
+![SSH into your VM](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/lab4-ssh-vm.PNG?raw=true)
+
+
 
 
 
