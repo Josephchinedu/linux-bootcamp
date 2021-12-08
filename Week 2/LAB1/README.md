@@ -14,3 +14,6 @@ Quickstart: Create a Linux VM
 
 Quickstart for AWS CloudShell
 * https://docs.aws.amazon.com/cloudshell/latest/userguide/working-with-cloudshell.html
+
+1. Launch AWS Cloud Shell
+![AWS Cloud Shell](https://github.com/Josephchinedu/linux-bootcamp/blob/devjoseph/devjoseph_images/aws_cloud_shell.PNG?raw=true)
